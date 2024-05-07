@@ -67,9 +67,10 @@
             <br>
         </form>
 
+    <!-- Maaf Pak Kalau ada kode yang beda dari SS, pdfnya takut telat tadi soalnya -->
         <div style="text-align: center;">
             <p>Data Group B Piala Asia Qatar U-23</p>
-            <p>Per 07 Mei 2024 15:08:16 (waktu dan jam sekarang)</p>
+            <p id="currentDateTime"></p>
             <p>YUNIKO / 211011400911</p>
         </div>
 
@@ -109,6 +110,17 @@
                 cell.textContent = formData[key];
             }
         }
+
+        var dateTimeElement = document.getElementById("currentDateTime");
+
+        function updateDateTime() {
+        var now = new Date();
+        var dateTimeString = now.toLocaleString();
+        dateTimeElement.innerHTML = dateTimeString;
+        }
+
+        updateDateTime();
+        setInterval(updateDateTime, 1000);
     </script>
 </body>
 </html>
